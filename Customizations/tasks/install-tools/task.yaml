@@ -1,44 +1,57 @@
-$schema: "1.0"
-name: "liberal-consults-devbox"
-description: "Setup development environment for Liberal Consults"
+name: install-tools
+description: Install development tools and setup workspace
 tasks:
-  - name: winget
-    description: Install Visual Studio 2022 Enterprise
-    parameters:
-      package: Microsoft.VisualStudio.2022.Enterprise
-      
-  - name: winget
+  - name: InstallVSCode
     description: Install Visual Studio Code
-    parameters:
-      package: Microsoft.VisualStudioCode
-      
-  - name: winget
+    command: winget
+    arguments:
+      - install
+      - --id
+      - Microsoft.VisualStudioCode
+      - --silent
+      - --accept-package-agreements
+      - --accept-source-agreements
+  
+  - name: InstallGit
     description: Install Git
-    parameters:
-      package: Git.Git
-      
-  - name: winget
+    command: winget
+    arguments:
+      - install
+      - --id
+      - Git.Git
+      - --silent
+      - --accept-package-agreements
+      - --accept-source-agreements
+  
+  - name: InstallDotNetSDK
     description: Install .NET SDK 8
-    parameters:
-      package: Microsoft.DotNet.SDK.8
-      
-  - name: winget
+    command: winget
+    arguments:
+      - install
+      - --id
+      - Microsoft.DotNet.SDK.8
+      - --silent
+      - --accept-package-agreements
+      - --accept-source-agreements
+  
+  - name: InstallNodeJS
     description: Install Node.js LTS
-    parameters:
-      package: OpenJS.NodeJS.LTS
-      
-  - name: winget
-    description: Install Docker Desktop
-    parameters:
-      package: Docker.DockerDesktop
-      
-  - name: winget
+    command: winget
+    arguments:
+      - install
+      - --id
+      - OpenJS.NodeJS.LTS
+      - --silent
+      - --accept-package-agreements
+      - --accept-source-agreements
+  
+  - name: InstallChrome
     description: Install Google Chrome
-    parameters:
-      package: Google.Chrome
-      
-  - name: git-clone
-    description: Clone the DevBox-Test repository
-    parameters:
-      repositoryUrl: https://github.com/ibrahimbio/DevBox-Test.git
-      directory: 'C:\Workspaces'
+    command: winget
+    arguments:
+      - install
+      - --id
+      - Google.Chrome
+      - --silent
+      - --accept-package-agreements
+      - --accept-source-agreements
